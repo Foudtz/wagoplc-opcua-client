@@ -4,7 +4,7 @@ This is a librairy to connect to a WAGO PLC OPC-UA Server
 
 ## Examples
 
-Here is a example to reach data :
+Here is a example to reach data and update a MongoDB:
 ```
 //...
 const { WagoPLC } 	= require('wagoplc-opcua-client');
