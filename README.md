@@ -6,6 +6,9 @@ This is a librairy to connect to a WAGO PLC OPC-UA Server
 
 Here is a example to reach data :
 ```
+//...
+const { WagoPLC } 	= require('wagoplc-opcua-client');
+
 logger.info("[OPC]  |_ Starting OPCUA connection on : " + Environnement.Config.WAGO_OPCUA_HOST );
 var wago = new WagoPLC(Environnement.Config.WAGO_OPCUA_URL, Environnement.Config.WAGO_OPCUA_USER, Environnement.Config.WAGO_OPCUA_PASS);
 wago.connect().then(async () => {
@@ -36,5 +39,8 @@ wago.connect().then(async () => {
 		ItemController.updateItem(itemToSave);
 	});
 
+// Don't forget to close and disconnect when needed, or your PLC will keep connection and slow down
+// 		wago.close();
+//		wago.disconnect();
 });
 ```
